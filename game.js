@@ -323,9 +323,6 @@ function showFinalScreen() {
 // Função para carregar a história (VERSÃO CORRIGIDA)
 function loadStory(nodeId) {
     
-    /* !!!! ESTA É A PARTE QUE FALTAVA !!!!
-      Intercepta o gatilho do minijogo ANTES de tentar carregar o nó.
-    */
     if (nodeId === 'START_MEMORY_GAME') {
         startMemoryGame(); // Chama a função do minijogo
         return; // Para a execução de loadStory
@@ -395,10 +392,7 @@ function loadStory(nodeId) {
 startButton.addEventListener('click', showGame);
 
 
-/* =============================================
-== INÍCIO DO CÓDIGO DO JOGO DA MEMÓRIA
-=============================================
-*/
+/* INÍCIO DO CÓDIGO DO JOGO DA MEMÓRIA*/
 
 // Variáveis de escopo para o jogo da memória
 let memoryGameFirstCard = null;
@@ -416,12 +410,6 @@ const memoryScreen = document.getElementById('memory-game-screen');
 const memoryBoard = memoryScreen.querySelector('#game-board');
 const memoryStats = memoryScreen.querySelector('#stats');
 const memoryRestartButton = memoryScreen.querySelector('#memory-restart-button');
-
-// Sons
-const flipSound = document.getElementById('flipSound');
-const matchSound = document.getElementById('matchSound');
-const failSound = document.getElementById('failSound');
-const bgMusic = document.getElementById('bgMusic');
 
 // Função principal para iniciar o jogo da memória
 function startMemoryGame() {
